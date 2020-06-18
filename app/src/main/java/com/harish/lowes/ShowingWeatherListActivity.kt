@@ -23,8 +23,8 @@ class ShowingWeatherListActivity : AppCompatActivity(), OnItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_showing_weather_list)
         val intent = intent
-        cityName = intent.getStringExtra("name")
-        forecastModelArrayList = intent.getParcelableArrayListExtra("forecast")
+        cityName = getIntent().getStringExtra("name")
+        forecastModelArrayList = getIntent().getParcelableArrayListExtra("forecast")
         supportActionBar!!.title = getIntent().getStringExtra("name")
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         initViews()

@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         val jsonObject = JSONObject(response)
                         val listJsonArray = jsonObject.getJSONArray("list")
                         for (i in 0 until listJsonArray.length()) {
-                            forecastModel = ForecastModel()
                             val jo = listJsonArray.getJSONObject(i)
                             val mainJsonObject = jo.getJSONObject("main")
                             temp = mainJsonObject.getString("temp")
@@ -86,10 +85,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                                 cloud = weatherObject.getString("main")
                                 description = weatherObject.getString("description")
                             }
-                            forecastModel.temp = temp
-                            forecastModel.feels_like = forecast
-                            forecastModel.cloud = cloud
-                            forecastModel.description = description
+                            forecastModel = ForecastModel(temp,forecast,cloud,description)
                             forecastModelList!!.add(forecastModel)
                         }
                         val jsonObjectCity = jsonObject.getJSONObject("city")
