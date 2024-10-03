@@ -17,7 +17,8 @@ class ForecastAdapter(var forecastModels: List<ForecastModel>, var context: Cont
 
     private var clickListener: OnItemClickListener? = null
 
-    // Harish change
+    // Sree change
+    // Hello Harish
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val view = LayoutInflater.from(context).inflate(R.layout.forecast_item, parent, false)
         return VH(view)
